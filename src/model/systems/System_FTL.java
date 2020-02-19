@@ -1,6 +1,6 @@
 package model.systems;
 
-public abstract class System {
+public abstract class System_FTL {
 	private int level;//and reactor power needeed to full power
 	private int damageTaken;
 	private int ionDamageTaken;
@@ -9,7 +9,7 @@ public abstract class System {
 	private int fire; //Not gonna implement in long time (int??)
 	
 	
-	public System() {
+	public System_FTL() {
 		// TODO Auto-generated constructor stub
 	}
 

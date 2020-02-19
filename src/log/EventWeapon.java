@@ -1,20 +1,27 @@
 package log;
 
 import model.ship.Ship;
+import model.weapons.Weapon;
 
-public class EventWeapon extends Event{
+public class EventWeapon extends Event{	
 	
-	private Ship targetShip;
-	private Ship ownShip;
 
-	public EventWeapon(int timeTrigger) {
+	private Ship enemyShip;
+	private Weapon theWeapon;
+	
+	public EventWeapon(int timeTrigger, Ship enemyShip, Weapon theWeapon) {
 		super(timeTrigger);
-		// TODO Auto-generated constructor stub
+		attach(theWeapon);
+		attach(enemyShip);
+		this.enemyShip = enemyShip;
+		this.theWeapon = theWeapon;
 	}
 
 	@Override
 	public void action() {
-		// TODO Auto-generated method stub
+		System.out.println("Pium pium");
+		notifyObservers();
+		enemyShip.receiveShoot();
 		
 	}
 

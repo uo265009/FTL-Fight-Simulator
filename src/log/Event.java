@@ -6,6 +6,10 @@ import java.util.List;
 /**
  * This class represents everything that goes through time in the game, such as starting charging your laser, and then fire it(seconds later)
  * This also follows the role of Subject in the software design pattern Observer * 
+ * 
+ * nah, el observer no vale la pena, necesito pasar cositas, este evento no tiene un estado como tal
+ * totalmente overkilled e inutil
+ * 
  * @author uo265009
  *
  */

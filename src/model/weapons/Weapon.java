@@ -1,9 +1,9 @@
 package model.weapons;
 
-public class Weapon {
+import log.Observer;
 
-	public Weapon() {
-		// TODO Auto-generated constructor stub
-	}
+public interface Weapon extends Observer{
+
+	
 
 }
