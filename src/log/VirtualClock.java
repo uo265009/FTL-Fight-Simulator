@@ -9,11 +9,18 @@ public class VirtualClock {
 	
 	private int actualTime;//measured in miliseconds
 	private List<Event> colaEventos;
+	private int numeroEventos;
 	
 	public VirtualClock() {
 		colaEventos = new LinkedList<Event>();
+		numeroEventos = 0;
 	}
-	public void addEvent() {
+	
+	public int getTime() {
+		return actualTime;
+	}
+	public void addEvent(Event evento) {
+		colaEventos.add(evento);
 		Collections.sort(colaEventos);
 	}
 	/**
@@ -23,8 +30,15 @@ public class VirtualClock {
 	public void runClock() {
 		while(true) {
 			//sacamos el primer evento
-			Event currentEvent = colaEventos.get(0);
-			currentEvent.action();
+			if(!colaEventos.isEmpty()) {		
+				Event currentEvent = colaEventos.get(0);
+				actualTime = currentEvent.getTimeTrigger();
+				currentEvent.action();				
+				//lo eliminamos
+				colaEventos.remove(currentEvent);
+				numeroEventos ++;
+				System.out.print(numeroEventos);
+			}
 		}
 	}
 
