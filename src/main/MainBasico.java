@@ -5,11 +5,11 @@ import log.EventMakerPrueba;
 import log.EventPrueba;
 import log.VirtualClock;
 
-public class Main {
+public class MainBasico {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		new Main().run2();
+		new MainBasico().run2();
 	}
 	
 	public void run1() {
